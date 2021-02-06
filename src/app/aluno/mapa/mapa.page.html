@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="aluno-menu"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div #map id="map"></div>
+</ion-content>
+
+<ion-footer>
+  <ion-button *ngIf="isTracking == false" expand="full" color="success" (click)="morningRoute()">
+    Carregar rota da manhã
+  </ion-button>
+  <ion-button *ngIf="isTracking == true" expand="full" color="danger" (click)="nightRoute()">
+    Carregar rota da noite
+  </ion-button>
+</ion-footer>

@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="aluno-menu"></ion-back-button>
+    </ion-buttons>
+    <ion-title style="text-align: justify;">BusIF - Info</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div>
+    <ion-card>
+      <img src="../../../assets/images/routes.png" />
+      <ion-card-header>
+        <ion-card-subtitle>Versão: 1.0.0</ion-card-subtitle>
+        <ion-card-title>BusIF - App de mobilidade estudantil</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <div>
+          <p>Criado e desenvolvido por:</p>
+          <span>- Luiz Gustavo Brito Oliveira</span>
+        </div>
+        <div id="text2">
+          <p>O que é, pra quê serve e como surgiu o projeto BusIF?</p>
+          <span>
+            - O BusIF é um app com finalidades de auxiliar os alunos, tanto novatos como veteranos, a identificar rotas,
+            localizade e horários nas rotas
+            realizadas pelo ônibus escolar. Produzido por um aluno do Instituto Federal do Piauí (Campus Parnaíba) a
+            idéia
+            surgiu de uma roda de amigos onde os mesmos
+            estavam discutindo uma matéria relacionada a aplicativos móveis e que, por fim, foi colocada em prática.
+          </span>
+        </div>
+        <div id="text2">
+          <p>Redes sociais:</p>
+          <ion-item button (click)="facebookBrowser()"><a>Facebook</a></ion-item>
+          <ion-item button (click)="instagramBrowser()"><a>Instagram</a></ion-item>
+          <ion-item button (click)="twitterBrowser()"><a>Twitter</a></ion-item>
+        </div>
+        <div id="text2">
+          <p style="text-align: center;">Obrigado por utilizar o BusIF App!</p>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

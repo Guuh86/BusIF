@@ -1,0 +1,37 @@
+.neon-danger{
+    color: #808289;
+    animation: glow1 1s linear infinite alternate;
+}
+
+.neon-success{
+    color: #808289;
+    animation: glow2 1s linear infinite alternate;
+}
+
+.neon-warning{
+    color: #808289;
+    animation: glow3 1s linear infinite alternate;
+}
+
+@-webkit-keyframes glow1 {
+    0% {color: #808289;}
+    100% {color: #FF0000;}
+}
+
+@-webkit-keyframes glow2 {
+    0% {color: #808289;}
+    100% {color: #00FF00;}
+}
+
+@-webkit-keyframes glow3 {
+    0% {color: #808289;}
+    100% {color: #FFFF00;}
+}
+
+.neon-success{
+    color: #808289;
+}
+
+.neon-warning{
+    color: #808289;
+}

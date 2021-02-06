@@ -1,0 +1,70 @@
+<ion-content>
+
+  <ion-segment value="aluno" (ionChange)="segmentChanged($event)">
+    <ion-segment-button value="aluno">
+      <ion-label>Aluno</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="motorista">
+      <ion-label>Motorista</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+
+  <div>
+      <ion-card *ngIf="selectedSegment == 'aluno'">
+        <img src="../../../assets/images/aluno.jpg" />
+        <ion-card-header>
+          <ion-card-subtitle class="text1">
+            LOGIN - ALUNO(A)
+          </ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-list>
+            <ion-item>
+              <ion-label class="text2" >Login: </ion-label>
+              <ion-input type="text" [(ngModel)]="email"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label class="text2">Senha: </ion-label>
+              <ion-input type="password" [(ngModel)]="password"></ion-input>
+            </ion-item>
+            <ion-item lines="none">
+              <ion-button type="submit" [disabled]="!email || !password" (click)="loginComoAluno()">ENTRAR</ion-button>
+            </ion-item>
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+  </div>
+
+  <div>
+    <ion-card *ngIf="selectedSegment == 'motorista'">
+      <img src="../../../assets/images/motorista.jpg" />
+      <ion-card-header>
+        <ion-card-subtitle class="text1">
+          LOGIN - MOTORISTA
+        </ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list>
+          <ion-item>
+            <ion-label class="text2">ID Motorista: </ion-label>
+            <ion-input type="text" [(ngModel)]="email"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label class="text2">Senha: </ion-label>
+            <ion-input type="password" required [(ngModel)]="password"></ion-input>
+          </ion-item>
+          <ion-item lines="none">
+            <ion-button type="submit" [disabled]="!email || !password" (click)="loginComoMotorista()">ENTRAR</ion-button>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <ion-fab *ngIf="selectedSegment == 'aluno'" vertical="bottom" horizontal="end" slot="fixed" routerLink="/home">
+    <ion-fab-button>
+      <ion-icon name="information-circle-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

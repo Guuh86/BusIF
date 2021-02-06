@@ -1,0 +1,90 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="aluno-menu"></ion-back-button>
+    </ion-buttons>
+    <ion-title style="text-align: justify">Contato - BusIF</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div id="text-top">
+    Redes sociais do app:
+  </div>
+
+  <div id="div-list">
+    <ion-card>
+      <ion-card-content>
+        <ion-list>
+          <ion-item>
+            <ion-label> Dúvidas, reclamações ou sugestões? </ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-icon name="logo-facebook" slot="start" style="color: #1877f2;"></ion-icon>
+            Facebook
+            <ion-icon name="chevron-forward-outline" slot="end" style="zoom: 0.7;"></ion-icon>
+          </ion-item>
+          <ion-item>
+            <ion-icon name="logo-instagram" slot="start" style="color: #bc2a8d"></ion-icon>
+            Instagram
+            <ion-icon name="chevron-forward-outline" slot="end" style="zoom: 0.7;"></ion-icon>
+          </ion-item>
+          <ion-item>
+            <ion-icon name="logo-twitter" slot="start" style="color: #1DA1F2"></ion-icon>
+            Twitter
+            <ion-icon name="chevron-forward-outline" slot="end" style="zoom: 0.7;"></ion-icon>
+          </ion-item>
+          <ion-item>
+            <ion-icon name="mail" slot="start" style="color: #08851b"></ion-icon>
+            E-mail
+            <ion-icon name="chevron-forward-outline" slot="end" style="zoom: 0.7;"></ion-icon>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <div id="text-top">
+    Informar problema ou erro:
+  </div>
+
+  <div id="div-form">
+      <ion-card>
+        <ion-card-content>
+          <ion-list>
+            <ion-item>
+              <p id="text-top">
+                Para uma melhor análise é necessário uma captura de tela do problema :) caso você não consiga uma
+                captura,
+                entre em contato com a gente nas outras formas acima
+              </p>
+            </ion-item>
+            <ion-item>
+              <ion-input placeholder="Matrícula *" type="text" [(ngModel)]="inputMatricula"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-textarea cols="3" rows="3" placeholder="Descreva o problema ou erro aqui!" type="text" [(ngModel)]="inputDesc">
+              </ion-textarea>
+            </ion-item>
+            <ion-item *ngIf="showInput">
+              <ion-input [(ngModel)]="devId"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label>Escolher imagem e enviar:</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-button 
+              class="btn" 
+              (click)="openGalery()" 
+              (click)="addReport({ matricula: inputMatricula, desc: inputDesc, devId: this.device.uuid })"
+              [disabled]="!inputMatricula || !inputDesc"
+              >
+                <ion-icon name="images-outline" slot="start"></ion-icon>
+                &nbsp; Selecionar uma captura e enviar
+              </ion-button>
+            </ion-item>
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+  </div>
+</ion-content>

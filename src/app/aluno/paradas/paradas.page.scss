@@ -1,0 +1,28 @@
+#map{
+    height: 100%;
+    position: fixed;
+}
+
+.label1{
+    position: absolute;
+    top: 9px;
+    right: 55px;
+    color: white;
+    background-color: rgba(0,0,0,0.7);
+    line-height: 24px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+}
+
+.label2{
+    position: absolute;
+    top: 58px;
+    right: 55px;
+    color: white;
+    background-color: rgba(0,0,0,0.7);
+    line-height: 24px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+}

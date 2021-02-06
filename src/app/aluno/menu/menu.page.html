@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>BusIFPI - Aluno</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-segment value="menu" (ionChange)="segmentChanged($event)">
+    <ion-segment-button value="menu">
+      <ion-label>Menu</ion-label>
+    </ion-segment-button>
+    <!---
+    <ion-segment-button value="notifications">
+      <ion-label>Avisos<ion-badge color="danger" slot="end">!</ion-badge>
+      </ion-label>
+    </ion-segment-button>
+  -->
+  </ion-segment>
+
+  <ion-list *ngIf="selectedSegment == 'menu'">
+    <ion-item>
+      <ion-label class="name-label">OPÇÕES DO ALUNO</ion-label>
+    </ion-item>
+    <ion-item button routerLink="/aluno-map">
+      <ion-icon name="navigate-outline" slot="start" style="color: red"></ion-icon>
+      <p class="name-bt"> RASTREAR ÔNIBUS </p>
+    </ion-item>
+    <ion-item routerLink="/aluno-stops">
+      <ion-icon name="map-outline" slot="start" style="color: yellow"></ion-icon>
+      <p class="name-bt"> PARADAS </p>
+    </ion-item>
+    <ion-item button routerLink="/aluno-contact">
+      <ion-icon name="mail-outline" slot="start" style="color: lightgreen"></ion-icon>
+      <p class="name-bt"> CONTATO </p>
+    </ion-item>
+    <ion-item button routerLink="/aluno-info">
+      <ion-icon name="information-circle-outline" slot="start" style="color: purple"></ion-icon>
+      <p class="name-bt"> INFORMAÇÕES </p>
+    </ion-item>
+  </ion-list>
+
+  <div *ngIf="selectedSegment == 'menu'" style="padding-top: 2%;">
+    <ion-list>
+      <ion-item>
+        <ion-label class="name-label">MURAL DE ALERTAS</ion-label>
+      </ion-item>
+      <ion-item *ngFor="let idea of (ideas | async)" lines="none">
+        <ion-icon name="alert-circle-outline" class="{{ idea.icon }}" class="none"></ion-icon>
+      </ion-item>
+      <ion-item  *ngFor="let idea of (ideas | async)" lines="none">
+        <p class="alertName" style="margin: auto;"> {{ idea.title }}</p>
+      </ion-item>
+      <ion-item *ngFor="let idea of (ideas | async)">
+        <p class="alertDesc" style="margin: auto; padding-top: 0;"> {{ idea.dsc }}</p>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="logout()">
+    <ion-fab-button>
+      <ion-icon name="exit-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="aluno-menu"></ion-back-button>
+    </ion-buttons>
+    <p>
+      Paradas mais próxima
+    </p>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div #map id="map"></div>
+</ion-content>
+
+<ion-fab horizontal="end" vertical="bottom" slot="fixed">
+  <ion-fab-button color="dark">
+    <ion-icon name="add-outline"></ion-icon>
+  </ion-fab-button>
+
+  <ion-fab-list side="top">
+
+    <ion-label class="label1">Ver paradas</ion-label>
+    <ion-fab-button color="light" (click)="presentActionSheet()">
+      <ion-icon name="flag-outline"></ion-icon>
+    </ion-fab-button>
+
+    <ion-label class="label2">Selecionar parada</ion-label>
+    <ion-fab-button color="light" (click)="presentMarkers()">
+      <ion-icon name="color-wand-outline"></ion-icon>
+    </ion-fab-button>
+
+  </ion-fab-list>
+</ion-fab>
